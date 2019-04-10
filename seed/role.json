@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Admin",
+    "REF__permissions": [
+      {
+        "ref": "Permission",
+        "find": { "name": "canCreate" }
+      },
+      {
+        "ref": "Permission",
+        "find": { "name": "canEdit" }
+      },
+      {
+        "ref": "Permission",
+        "find": { "name": "canDelete" }
+      },
+      {
+        "ref": "Permission",
+        "find": { "name": "canView" }
+      }
+    ]
+  },
+  {
+    "name": "User",
+    "REF__permissions": [
+      {
+        "ref": "Permission",
+        "find": { "name": "canCreate" }
+      },
+      {
+        "ref": "Permission",
+        "find": { "name": "canView" }
+      }
+    ]
+  },
+  {
+    "name": "Guest",
+    "REF__permissions": [
+      {
+        "ref": "Permission",
+        "find": { "name": "canView" }
+      }
+    ]
+  }
+]

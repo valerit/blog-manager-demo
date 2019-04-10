@@ -1,0 +1,6 @@
+﻿[
+  { "name": "canCreate" },
+  { "name": "canEdit" },
+  { "name": "canDelete" },
+  { "name": "canView" }
+]

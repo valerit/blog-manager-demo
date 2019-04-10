@@ -1,0 +1,38 @@
+[
+  {
+    "name.first": "Admin",
+    "name.last": "User",
+    "email": "admin@bm.com",
+    "password": "admin",
+    "REF__role": [
+      {
+        "ref": "Role",
+        "find": { "name": "Admin" }
+      }
+    ]
+  },
+  {
+    "name.first": "Standard",
+    "name.last": "User",
+    "email": "user@bm.com",
+    "password": "user",
+    "REF__role": [
+      {
+        "ref": "Role",
+        "find": { "name": "User" }
+      }
+    ]
+  },
+  {
+    "name.first": "Guest",
+    "name.last": "User",
+    "email": "guest@bm.com",
+    "password": "guest",
+    "REF__role": [
+      {
+        "ref": "Role",
+        "find": { "name": "Guest" }
+      }
+    ]
+  }
+]

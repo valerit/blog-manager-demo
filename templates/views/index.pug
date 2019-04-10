@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block content
+	.container: .jumbotron
+		img(src='/images/logo.svg', width='160')
+		h1 Welcome
+		hr
+		if user && user.canAccessKeystone
+			p
+				a(href='/admin').btn.btn-lg.btn-primary Open the Admin Panel
+		else
+			p
+				a(href='/admin/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
+				|  to use the Admin Panel.
+		hr
