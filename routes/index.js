@@ -9,7 +9,7 @@ var apiRoot = process.env.API_ROOT;
 
 // Common Middleware
 keystone.pre('routes', [middleware.initLocals, middleware.initErrorHandlers]);
-keystone.pre('render', middleware.flashMessages);
+keystone.pre('render', [middleware.flashMessages, keystone.security.csrf.middleware.init]);
 keystone.pre('admin', middleware.preAdmin);
 
 // Handle errors
@@ -49,10 +49,12 @@ exports = module.exports = function (app) {
 
   // Views
   app.get('/', routes.views.home);
+  app.get('/signup', routes.views.signup);
   app.get('/chat', middleware.requireAdmin, routes.views.chat);
 
   // APIs
-  // TODO
+  var apiRoot = process.env.API_ROOT;
+  app.post(apiRoot + '/auth/signup', keystone.security.csrf.middleware.validate, routes.apis.auth.signup);
 
   // init csrf token
   app.get(apiRoot + '/csrf', keystone.security.csrf.middleware.init, routes.apis.csrf);
